@@ -1,6 +1,6 @@
-import './style.css';
+import "./style.css";
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
 <div class="status-bar">
   <div class="loading-bar">
     <div class="progress"></div>
@@ -12,23 +12,23 @@ document.querySelector('#app').innerHTML = `
 </div>
 
 <div class="success-popup" id="success-popup">
-  <p>Salvamento concluído! <span>NerdGenérico</span> salvo com sucesso</p>
+  <p>Salvamento concluído! <span><a href="https://www.twitch.tv/nerdgenerico">NerdGenérico</a></span> salvo com sucesso</p>
 </div>
 `;
 
-const progressBar = document.querySelector('.progress');
-const successPopup = document.getElementById('success-popup');
+const progressBar = document.querySelector(".progress");
+const successPopup = document.getElementById("success-popup");
 
 let progress = 0;
 
 export function updateProgress() {
   progress += 1;
   progressBar.style.width = `${progress}%`;
-  if (progress >= 500) {
+  if (progress >= 300) {
     setTimeout(() => {
-      successPopup.classList.add('show');
+      successPopup.classList.add("show");
     }, 1);
   }
 }
 
-setInterval(updateProgress, 50);
+setInterval(updateProgress, 20);
