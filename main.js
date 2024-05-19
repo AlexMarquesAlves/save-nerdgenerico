@@ -24,7 +24,7 @@ let progress = 0;
 export function updateProgress() {
   progress += 1;
   progressBar.style.width = `${progress}%`;
-  if (progress >= 5000) {
+  if (progress >= 100) {
     setTimeout(() => {
       successPopup.classList.add('show');
     }, 1);
